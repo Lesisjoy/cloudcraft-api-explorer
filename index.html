@@ -3,10 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola Mundo - Vercel</title>
+    <meta name="description" content="Mi primer proyecto conectado con Visual Studio Code, GitHub y Vercel.">
+    <title>Hola Mundo | Mi primer despliegue</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --ink: #f7f8ff;
+            --muted: #b8bfd6;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 15% 18%, rgba(139, 92, 246, 0.24), transparent 28rem),
+                radial-gradient(circle at 85% 75%, rgba(34, 211, 238, 0.17), transparent 26rem),
+                #080b16;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.3;
+            background-image:
+                linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: linear-gradient(to bottom, black, transparent 85%);
+        }
+
+        main {
+            position: relative;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            padding: 32px 20px;
+        }
+
+        .card {
+            width: min(820px, 100%);
+            padding: clamp(32px, 7vw, 72px);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.11);
+            border-radius: 30px;
+            background: rgba(16, 20, 38, 0.72);
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+            backdrop-filter: blur(18px);
+            animation: arrive 700ms ease-out both;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin: 0 0 24px;
+            padding: 8px 13px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #d9ddf1;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 14px #4ade80;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(3rem, 10vw, 6.6rem);
+            line-height: 0.95;
+            letter-spacing: -0.065em;
+        }
+
+        h1 span {
+            display: block;
+            color: transparent;
+            background: linear-gradient(110deg, #c4b5fd 15%, #67e8f9 80%);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        .intro {
+            max-width: 570px;
+            margin: 26px auto 0;
+            font-size: clamp(1rem, 2.5vw, 1.18rem);
+            line-height: 1.75;
+            color: var(--muted);
+        }
+
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 36px;
+        }
+
+        .tool {
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 650;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.055);
+        }
+
+        .arrow { color: #737b99; }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.82rem;
+            color: #78809c;
+        }
+
+        @keyframes arrive {
+            from { opacity: 0; transform: translateY(18px) scale(0.985); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @media (max-width: 520px) {
+            .card { border-radius: 22px; }
+            .arrow { display: none; }
+            .tool { flex: 1 1 100%; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .card { animation: none; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hola Mundo desde Vercel</h1>
-    <p>Proyecto publicado con GitHub y Vercel.</p>
+    <main>
+        <section class="card" aria-labelledby="titulo-principal">
+            <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Sitio en línea</p>
+            <h1 id="titulo-principal">Hola <span>Mundo.</span></h1>
+            <p class="intro">
+                Mi primer proyecto web ya está conectado, versionado y listo para crecer.
+                Un pequeño inicio para algo mucho más grande.
+            </p>
+
+            <div class="flow" aria-label="Flujo de publicación del proyecto">
+                <span class="tool">Visual Studio Code</span>
+                <span class="arrow" aria-hidden="true">→</span>
+                <span class="tool">GitHub</span>
+                <span class="arrow" aria-hidden="true">→</span>
+                <span class="tool">Vercel</span>
+            </div>
+
+            <footer>Hecho con curiosidad y unas cuantas líneas de código.</footer>
+        </section>
+    </main>
 </body>
 </html>
