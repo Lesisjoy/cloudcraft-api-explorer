@@ -61,7 +61,11 @@
                     <div class="field"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" maxlength="30"></div>
                     <div class="field"><label for="correo">Correo</label><input id="correo" name="correo" type="email" maxlength="160"></div>
                     <div class="field"><label for="direccion">Dirección</label><textarea id="direccion" name="direccion" maxlength="255"></textarea></div>
-                    <div class="field"><label for="categoria">Categoría</label><input id="categoria" name="categoria" maxlength="80"></div>
+                    <div class="field">
+                        <label for="categoria_id">ID de categoría</label>
+                        <input id="categoria_id" name="categoria_id" type="number" min="1" step="1" required inputmode="numeric">
+                        <small id="categoryHint" style="display:block;margin-top:7px;color:var(--muted)">FastAPI requiere el identificador numérico de la categoría.</small>
+                    </div>
                     <div class="form-actions"><button class="button" id="cancelButton" type="button" hidden>Cancelar</button><button class="button primary" id="saveButton" type="submit">Crear contacto</button></div>
                 </form>
             </section>
